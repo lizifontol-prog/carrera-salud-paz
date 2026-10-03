@@ -14,6 +14,35 @@ html{
 
 *{
     box-sizing:border-box;
+    /* ===== PANTALLA DE CARGA ===== */
+
+#pantallaCarga{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#ffffff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:opacity 0.4s ease;
+}
+
+.cargando-contenido{
+    text-align:center;
+}
+
+.cargando-contenido img{
+    width:180px;
+    max-width:60vw;
+    height:auto;
+}
+
+.cargando-contenido p{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#333;
+}
 }
 
 body{
@@ -1151,7 +1180,22 @@ form .boton:disabled{
 </head>
 
 <body>
+<!-- ===== PANTALLA DE CARGA ===== -->
 
+<div id="pantallaCarga">
+
+    <div class="cargando-contenido">
+
+        <img
+            src="snoopy-corriendo.gif"
+            alt="Snoopy corriendo"
+        >
+
+        <p>Cargando...</p>
+
+    </div>
+
+</div>
 <nav>
 
     <a href="#inicio">
@@ -3029,6 +3073,40 @@ document.addEventListener(
 );
 
 </script>
+<script>
+window.addEventListener("load", function(){
 
+    const pantallaCarga =
+        document.getElementById("pantallaCarga");
+
+    setTimeout(function(){
+
+        pantallaCarga.style.opacity = "0";
+
+        setTimeout(function(){
+            pantallaCarga.style.display = "none";
+        }, 400);
+
+    }, 700);
+
+});
+
+setTimeout(function(){
+
+    const pantallaCarga =
+        document.getElementById("pantallaCarga");
+
+    if(pantallaCarga){
+
+        pantallaCarga.style.opacity = "0";
+
+        setTimeout(function(){
+            pantallaCarga.style.display = "none";
+        }, 400);
+
+    }
+
+}, 2000);
+</script>
 </body>
 </html>
