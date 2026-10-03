@@ -843,6 +843,67 @@ form .boton:disabled{
     max-width:700px
 }
 
+.patrocinadores-contenedor{
+    max-width:1150px;
+    margin:45px auto 0;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:70px;
+}
+
+.patrocinador{
+    text-align:center;
+    width:100%;
+    max-width:500px;
+}
+
+.logo-patrocinador{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo-patrocinador img{
+    display:block;
+    max-width:260px;
+    max-height:140px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.logo-patrocinador:hover img{
+    transform:scale(1.06);
+}
+
+.patrocinador h3{
+    color:#123B8C;
+    font-size:16px;
+    margin:18px 0 10px;
+}
+
+.patrocinador-dato{
+    color:#444;
+    font-size:13px;
+    line-height:1.6;
+    margin:6px auto;
+    max-width:520px;
+}
+
+.patrocinador-dato a{
+    color:#123B8C;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.patrocinador-dato a:hover{
+    text-decoration:underline;
+}
+
 /* CONTACTO */
 
 #contacto{
@@ -986,32 +1047,114 @@ form .boton:disabled{
         width:220px;
         justify-content:center
     }
+
+    .patrocinadores-contenedor{
+        gap:45px;
+    }
+
+    .patrocinador{
+        max-width:500px;
+    }
 }
+
+/* ===== EFECTO ACUARELA DEL CURSOR ===== */
+
+.acuarela{
+    position:fixed;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            rgba(65,105,225,.35),
+            rgba(18,59,140,.18) 45%,
+            rgba(65,105,225,0) 75%
+        );
+
+    filter:blur(4px);
+
+    transform:translate(-50%,-50%) scale(.7);
+
+    animation:
+        desaparecerAcuarela .8s ease-out forwards;
+}
+
+@keyframes desaparecerAcuarela{
+
+    0%{
+        opacity:.7;
+        transform:
+            translate(-50%,-50%)
+            scale(.7)
+            rotate(0deg);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(-50%,-50%)
+            scale(2.2)
+            rotate(25deg);
+    }
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#informacion">Información</a>
-    <a href="#inscripcion">Inscripción</a>
-    <a href="#ruta">Ruta</a>
-    <a href="#patrocinadores">Patrocinadores</a>
-    <a href="#contacto">Contacto</a>
+
+    <a href="#inicio">
+        Inicio
+    </a>
+
+    <a href="#informacion">
+        Información
+    </a>
+
+    <a href="#inscripcion">
+        Inscripción
+    </a>
+
+    <a href="#ruta">
+        Ruta
+    </a>
+
+    <a href="#patrocinadores">
+        Patrocinadores
+    </a>
+
+    <a href="#contacto">
+        Contacto
+    </a>
+
 </nav>
 
 <header id="inicio">
 
     <div class="texto-portada">
 
-        <h1>Carrera por la Salud y la Paz</h1>
+        <h1>
+            Carrera por la Salud y la Paz
+        </h1>
 
-        <p>Generación XI de Medicina</p>
+        <p>
+            Generación XI de Medicina
+        </p>
 
-        <p>San Cristóbal de las Casas, Chiapas</p>
+        <p>
+            San Cristóbal de Las Casas, Chiapas
+        </p>
 
-        <a class="boton" href="#inscripcion">
+        <a
+            class="boton"
+            href="#inscripcion"
+        >
             ¡INSCRÍBETE!
         </a>
 
@@ -1023,7 +1166,9 @@ form .boton:disabled{
 
 <section id="informacion">
 
-    <h2>Sobre la carrera</h2>
+    <h2>
+        Sobre la carrera
+    </h2>
 
     <div class="informacion-intro">
 
@@ -1036,7 +1181,7 @@ form .boton:disabled{
         <p>
             Prepárate para disfrutar de una experiencia
             deportiva, familiar y llena de energía en
-            San Cristóbal de las Casas, Chiapas.
+            San Cristóbal de Las Casas, Chiapas.
         </p>
 
     </div>
@@ -1045,10 +1190,14 @@ form .boton:disabled{
 
         <div class="info-tarjeta">
 
-            <h3>📅 Fecha</h3>
+            <h3>
+                📅 Fecha
+            </h3>
 
             <p>
-                <strong>8 de noviembre</strong>
+                <strong>
+                    8 de noviembre
+                </strong>
             </p>
 
             <p>
@@ -1059,9 +1208,13 @@ form .boton:disabled{
 
         <div class="info-tarjeta">
 
-            <h3>🏃 Distancias</h3>
+            <h3>
+                🏃 Distancias
+            </h3>
 
-            <p>Elige entre:</p>
+            <p>
+                Elige entre:
+            </p>
 
             <p>
                 <strong>5 km</strong>
@@ -1073,7 +1226,9 @@ form .boton:disabled{
 
         <div class="info-tarjeta">
 
-            <h3>🏅 Categoría</h3>
+            <h3>
+                🏅 Categoría
+            </h3>
 
             <p>
                 Categoría
@@ -1090,38 +1245,41 @@ form .boton:disabled{
         </div>
 
     </div>
-<div style="
-    max-width:700px;
-    margin:35px auto;
-    background:white;
-    padding:25px 30px;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(18,59,140,.12);
-    border:2px solid #DDE7FF;
-">
 
-    <h3 style="
-        color:#123B8C;
-        font-size:28px;
-        margin:0 0 10px 0;
+    <div style="
+        max-width:700px;
+        margin:35px auto;
+        background:white;
+        padding:25px 30px;
+        border-radius:25px;
+        box-shadow:0 10px 25px rgba(18,59,140,.12);
+        border:2px solid #DDE7FF;
     ">
-        💙 Costo de inscripción
-    </h3>
 
-    <p style="
-        color:#4169E1;
-        font-size:32px;
-        font-weight:bold;
-        margin:0;
-    ">
-        $300 MXN
-    </p>
+        <h3 style="
+            color:#123B8C;
+            font-size:28px;
+            margin:0 0 10px 0;
+        ">
+            Costo de inscripción
+        </h3>
 
-</div>
+        <p style="
+            color:#4169E1;
+            font-size:32px;
+            font-weight:bold;
+            margin:0;
+        ">
+            $300 MXN
+        </p>
+
+    </div>
 
     <div class="horarios">
 
-        <h3>⏰ Horario del evento</h3>
+        <h3>
+            ⏰ Horario del evento
+        </h3>
 
         <div class="horario">
 
@@ -1151,7 +1309,9 @@ form .boton:disabled{
 
     <div class="kit">
 
-        <h3>🎽 ¿Qué incluye tu inscripción?</h3>
+        <h3>
+            🎽 ¿Qué incluye tu inscripción?
+        </h3>
 
         <p>
             Todos los participantes recibirán
@@ -1183,7 +1343,9 @@ form .boton:disabled{
 
     <div class="premiacion">
 
-        <h3>🏆 Premiación</h3>
+        <h3>
+            🏆 Premiación
+        </h3>
 
         <p>
             Se reconocerá a los
@@ -1195,7 +1357,9 @@ form .boton:disabled{
 
             <div class="premio">
 
-                <h4>🥇 1.er lugar</h4>
+                <h4>
+                    🥇 1.er lugar
+                </h4>
 
                 <p>
                     $1,500
@@ -1205,7 +1369,9 @@ form .boton:disabled{
 
             <div class="premio">
 
-                <h4>🥈 2.º lugar</h4>
+                <h4>
+                    🥈 2.º lugar
+                </h4>
 
                 <p>
                     $1,200
@@ -1215,7 +1381,9 @@ form .boton:disabled{
 
             <div class="premio">
 
-                <h4>🥉 3.er lugar</h4>
+                <h4>
+                    🥉 3.er lugar
+                </h4>
 
                 <p>
                     $800
@@ -1229,7 +1397,9 @@ form .boton:disabled{
 
     <div class="rifas">
 
-        <h3>🎟️ ¡También habrá rifas!</h3>
+        <h3>
+            🎟️ ¡También habrá rifas!
+        </h3>
 
         <p>
             Todos los folios de inscripción
@@ -1328,6 +1498,10 @@ form .boton:disabled{
                     para el evento.
                 </p>
 
+            </div>
+
+        </div>
+
     </div>
 
 </section>
@@ -1369,6 +1543,7 @@ form .boton:disabled{
             max="120"
             required
         >
+
 
         <label for="telefono">
             Teléfono
@@ -1521,8 +1696,8 @@ form .boton:disabled{
 
             <label for="carta_responsiva">
 
-                En caso de ser menor de edad deberás
-                llevar carta responsiva.
+                llevar carta responsiva
+                En caso de ser menor de edad deberá estar firmada por un tutor.
                 Estoy de acuerdo.
 
             </label>
@@ -1761,6 +1936,87 @@ form .boton:disabled{
         hacen posible este evento.
     </p>
 
+    <div class="patrocinadores-contenedor">
+
+        <!-- ===== CHEVROLET ===== -->
+
+        <div class="patrocinador">
+
+            <a
+                href="https://www.facebook.com/chevroletsancristobalmx"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="logo-patrocinador"
+            >
+
+                <img
+                    src="Chevrolet.jpg"
+                    alt="Chevrolet Farrera San Cristóbal"
+                >
+
+            </a>
+
+            <h3>
+                Chevrolet Farrera San Cristóbal
+            </h3>
+
+            <p class="patrocinador-dato">
+                📍 Dirección: Carr. Internacional KM 1170,
+                San Antonio, Frente al INE
+            </p>
+
+            <p class="patrocinador-dato">
+                📞 Número telefónico: 967 163 9116
+            </p>
+
+        </div>
+
+
+        <!-- ===== METLIFE ===== -->
+
+        <div class="patrocinador">
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61594394131690"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="logo-patrocinador"
+            >
+
+                <img
+                    src="medlife.jpg"
+                    alt="Insur/Metlife San Cristóbal"
+                >
+
+            </a>
+
+            <h3>
+                Insur/Metlife San Cristóbal
+            </h3>
+
+            <p class="patrocinador-dato">
+                📍 Dirección: Diego de Mazariegos no. 66,
+                local 1, Barrio de la Merced
+            </p>
+
+            <p class="patrocinador-dato">
+
+                📞 Número telefónico:
+
+                <a
+                    href="tel:9671911522"
+                >
+                    967-191-15-22
+                </a>
+
+            </p>
+
+ </p>
+
+        </div>
+
+    </div>
+
 </section>
 
 <section id="contacto">
@@ -1841,24 +2097,64 @@ form .boton:disabled{
 
 <script>
 
+<script>
+
 const URL_REGISTRO =
 "https://script.google.com/macros/s/AKfycbzlveuXljvaZoKboycOvzga811KevupE3xyU8-sVPwO8cIvi9Rg1KGC_fSFRbvNClBWdg/exec";
+
 
 const formularioInscripcion =
 document.getElementById("formularioInscripcion");
 
+
 const mensajeRegistro =
 document.getElementById("mensajeRegistro");
 
+
+/* ===== CREAR IFRAME OCULTO ===== */
+
+const iframeRegistro =
+document.createElement("iframe");
+
+iframeRegistro.name = "respuestaRegistro";
+
+iframeRegistro.style.display = "none";
+
+iframeRegistro.setAttribute(
+    "aria-hidden",
+    "true"
+);
+
+document.body.appendChild(
+    iframeRegistro
+);
+
+
+/* ===== CONFIGURAR FORMULARIO ===== */
+
+formularioInscripcion.action =
+URL_REGISTRO;
+
+formularioInscripcion.method =
+"POST";
+
+formularioInscripcion.target =
+"respuestaRegistro";
+
+
+/* ===== CUANDO SE ENVÍA EL FORMULARIO ===== */
+
 formularioInscripcion.addEventListener(
     "submit",
-    async function(event){
-
-        event.preventDefault();
+    function(){
 
         mensajeRegistro.className = "";
-        mensajeRegistro.style.display = "none";
-        mensajeRegistro.textContent = "";
+
+        mensajeRegistro.style.display =
+        "block";
+
+        mensajeRegistro.textContent =
+        "⏳ Enviando tu registro...";
 
         const boton =
         formularioInscripcion.querySelector(
@@ -1866,45 +2162,88 @@ formularioInscripcion.addEventListener(
         );
 
         boton.disabled = true;
-        boton.textContent = "ENVIANDO...";
+
+        boton.textContent =
+        "ENVIANDO...";
+
+    }
+);
+
+
+/* ===== RECIBIR EL FOLIO DESDE APPS SCRIPT ===== */
+
+window.addEventListener(
+    "message",
+    function(event){
 
         const datos =
-        new FormData(formularioInscripcion);
+        event.data;
 
-        try{
 
-            await fetch(
-                URL_REGISTRO,
-                {
-                    method:"POST",
-                    mode:"no-cors",
-                    body:new URLSearchParams(datos)
-                }
-            );
+        if(
+            !datos ||
+            datos.type !==
+            "REGISTRO_COMPLETADO"
+        ){
 
-            mensajeRegistro.className = "exito";
+            return;
 
-            mensajeRegistro.textContent =
-            "✅ ¡Registro completado! Tus datos fueron enviados correctamente. Gracias por inscribirte a la Carrera por la Salud y la Paz.";
+        }
+
+
+        const boton =
+        formularioInscripcion.querySelector(
+            'button[type="submit"]'
+        );
+
+
+        /* ===== REGISTRO CORRECTO ===== */
+
+        if(datos.ok === true){
+
+            mensajeRegistro.className =
+            "exito";
+
+            mensajeRegistro.innerHTML =
+            "✅ <strong>¡REGISTRO COMPLETADO!</strong><br><br>" +
+            "Tu número de corredor es:<br>" +
+            "<strong style=\"font-size:28px;\">" +
+            datos.folio +
+            "</strong><br><br>" +
+            "Guarda este número porque lo necesitarás posteriormente.";
 
             formularioInscripcion.reset();
 
-        }catch(error){
+            boton.disabled = false;
 
-            mensajeRegistro.className = "error";
+            boton.textContent =
+            "ENVIAR INSCRIPCIÓN";
+
+        }
+
+
+        /* ===== ERROR ===== */
+
+        else{
+
+            mensajeRegistro.className =
+            "error";
 
             mensajeRegistro.textContent =
-            "❌ No se pudo enviar el registro en este momento. Revisa tu conexión a internet e inténtalo nuevamente.";
-
-        }finally{
+            "❌ Ocurrió un error al guardar tu registro. Inténtalo nuevamente.";
 
             boton.disabled = false;
-            boton.textContent = "ENVIAR INSCRIPCIÓN";
+
+            boton.textContent =
+            "ENVIAR INSCRIPCIÓN";
 
         }
 
     }
 );
+
+
+/* ===== FUNCIÓN DEL MAPA ===== */
 
 function abrirMapa(){
 
@@ -1914,11 +2253,13 @@ function abrirMapa(){
 
 }
 
+
 function cerrarMapa(event){
 
     if(
         !event ||
-        event.target.id === "ventanaMapa"
+        event.target.id ===
+        "ventanaMapa"
     ){
 
         document.getElementById(
@@ -1928,6 +2269,39 @@ function cerrarMapa(event){
     }
 
 }
+
+</script> 
+
+<script>
+
+let ultimaMancha = 0;
+
+document.addEventListener("mousemove", function(event){
+
+    const ahora = Date.now();
+
+    if (ahora - ultimaMancha < 60) {
+        return;
+    }
+
+    ultimaMancha = ahora;
+
+    const mancha = document.createElement("div");
+
+    mancha.className = "acuarela";
+
+    mancha.style.left = event.clientX + "px";
+    mancha.style.top = event.clientY + "px";
+
+    document.body.appendChild(mancha);
+
+    setTimeout(function(){
+
+        mancha.remove();
+
+    }, 800);
+
+});
 
 </script>
 
